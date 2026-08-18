@@ -319,6 +319,8 @@ h1 em{font-style:normal;color:var(--amber);box-shadow:inset 0 -14px 0 rgba(242,1
 
 .lnav-right{display:flex;align-items:center;gap:10px;margin-left:auto}
 .lnav-toggle,.sb-toggle,.sb-close-btn{display:none}
+.mobile-demo-btn{display:none}
+.desktop-demo-btn{display:inline-flex}
 .ec-spark svg{max-width:100%;height:auto}
 .pred-scores{display:flex;gap:20px;align-items:flex-end;flex-wrap:wrap}
 .pred-signals{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -326,7 +328,7 @@ h1 em{font-style:normal;color:var(--amber);box-shadow:inset 0 -14px 0 rgba(242,1
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 @media (max-width:1060px){
-  .hero{grid-template-columns:1fr;gap:36px;padding-top:48px;padding-bottom:50px}
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:44px;padding-bottom:48px}
   .trust-grid,.login-grid{grid-template-columns:1fr}
   .g-21,.g-12,.g-3,.g-2{grid-template-columns:1fr}
   .qa-row{grid-template-columns:60px 1fr}
@@ -334,35 +336,40 @@ h1 em{font-style:normal;color:var(--amber);box-shadow:inset 0 -14px 0 rgba(242,1
 }
 
 @media (max-width:768px){
-  .wrap{padding:0 18px}
+  .wrap{padding:0 20px!important}
   .screen{overflow-x:hidden}
 
   /* Landing Nav Mobile */
-  .lnav{padding:14px 18px;flex-wrap:wrap;gap:12px}
-  .lnav-toggle{display:inline-flex;width:38px;height:38px}
+  .desktop-demo-btn{display:none!important}
+  .mobile-demo-btn{display:inline-flex!important;width:100%;justify-content:center;margin-top:6px}
+  .lnav{padding:14px 20px!important;justify-content:space-between;gap:12px}
+  .lnav-right{margin-left:0}
+  .lnav-toggle{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center}
   .lnav-links{
     display:none;
     width:100%;
     flex-direction:column;
-    gap:14px;
-    padding:16px 0 8px;
+    gap:12px;
+    padding:16px 0 10px;
     border-top:1px solid var(--line);
     margin-left:0;
   }
   .lnav-links.open{display:flex}
 
   /* Landing Hero */
-  .hero-proof{font-size:10px;letter-spacing:.06em;justify-content:flex-start;gap:8px 12px}
+  .hero-proof{font-size:10px;letter-spacing:.05em;justify-content:flex-start;gap:8px 12px}
   .hero-proof i{display:none}
 
   /* Login */
-  .login-left{padding:36px 22px;justify-content:flex-start}
+  .login-left{padding:36px 20px;justify-content:flex-start}
   .login-left h2{font-size:26px}
   .login-right{padding:24px 18px;max-width:100%}
   .login-note{width:fit-content;max-width:100%;white-space:normal}
 
-  /* Role preview scroll */
-  .rprev{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  /* Role tabs & preview */
+  .rtabs{display:flex;gap:8px;margin:18px 0 14px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+  .rtab{flex:0 0 auto;white-space:nowrap}
+  .rprev{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:16px!important}
 
   /* App Shell & Mobile Sidebar Drawer */
   .app{grid-template-columns:1fr}
@@ -400,18 +407,19 @@ h1 em{font-style:normal;color:var(--amber);box-shadow:inset 0 -14px 0 rgba(242,1
 }
 
 @media (max-width:600px){
-  .wrap{padding:0 14px}
+  .wrap{padding:0 18px!important}
   .kick{font-size:9.5px;letter-spacing:.16em}
-  h1{font-size:clamp(1.75rem,7.5vw,2.6rem)}
+  h1{font-size:clamp(1.8rem,7.8vw,2.7rem);line-height:1.1}
   .sect-title{font-size:clamp(1.3rem,5.5vw,1.8rem)}
   .lede{font-size:14.5px;margin:14px 0 20px}
 
   /* Hero CTA */
   .hero-cta{flex-direction:column;width:100%;gap:10px}
-  .hero-cta .btn{width:100%;justify-content:center}
+  .hero-cta .btn{width:100%;justify-content:center;padding:12px 18px}
 
   /* QA Rows */
-  .qa-row{grid-template-columns:1fr;gap:8px;padding:18px 4px}
+  .qa-row{grid-template-columns:1fr;gap:8px;padding:20px 0!important}
+  .qa-row:hover{padding-left:0!important}
   .qa-row p{grid-column:1}
   .qa-row .qn{font-size:32px}
 
@@ -473,6 +481,7 @@ h1 em{font-style:normal;color:var(--amber);box-shadow:inset 0 -14px 0 rgba(242,1
 }
 
 @media (max-width:480px){
+  .wrap{padding:0 16px!important}
   .scen-grid{grid-template-columns:1fr}
   .crumb{display:none}
   .top-tools{margin-left:0;width:100%;justify-content:space-between}
