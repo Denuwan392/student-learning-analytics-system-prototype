@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRAGNA · Learning Intelligence for GCE A/L</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="gridbg" aria-hidden="true"></div>
+
+<!-- ══════════════════ LANDING ══════════════════ -->
+<section id="scr-landing" class="screen">
+  <nav class="lnav wrap">
+    <div class="brand"><span class="brand-mark">◈</span> PRAGNA <span class="brand-si">ප්‍රඥා</span></div>
+    <div class="lnav-links" id="lnavLinks">
+      <a href="#loop">Closed Loop</a><a href="#questions">The 5 Questions</a><a href="#roles">Roles</a><a href="#scenarios">Demo Scenarios</a>
+    </div>
+    <div class="lnav-right">
+      <button class="btn pri sm" data-act="goto" data-to="#/login">Enter demo</button>
+      <button class="icon-btn lnav-toggle" data-act="toggle-lnav" aria-label="Toggle navigation">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero wrap">
+    <div class="hero-copy">
+      <div class="kick">AI-powered student learning intelligence · Sri Lanka GCE A/L</div>
+      <h1>Understand every student.<br><em>Improve every outcome.</em></h1>
+      <p class="lede">Not another marks ledger. PRAGNA watches how each student learns across terms, explains <strong>why</strong> things are changing, predicts the trajectory, recommends the next step for the student, teacher, institution and parent — then measures whether the intervention actually worked.</p>
+      <div class="hero-cta">
+        <button class="btn pri" data-act="goto" data-to="#/login">Enter the demo environment</button>
+        <button class="btn ghost" data-act="goto" data-to="#loop">Explore the closed loop</button>
+      </div>
+      <div class="hero-proof mono">
+        <span>SYNTHETIC DEMO DATA</span><i></i><span>108 students</span><i></i><span>2,592 longitudinal assessments</span><i></i><span>9 agents · guardrailed</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="evid-card panel">
+        <div class="ec-head"><span class="kick">Live evidence · Student Analysis Agent</span><span class="chip warn">DEMO</span></div>
+        <div class="ec-student">
+          <span class="avatar" style="--c:#F2B84B">KJ</span>
+          <div><b>Kavindu Jayasuriya</b><span class="mono dim">13-B · Physical Science · ST-002</span></div>
+        </div>
+        <div class="ec-row mono"><span>Physics · Mechanics</span><b class="coral">52.5%</b></div>
+        <div class="ec-spark" id="heroSpark"></div>
+        <div class="ec-type mono" id="heroType"></div>
+        <div class="ec-loop" id="heroLoop"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="strip" id="loop">
+    <div class="wrap">
+      <div class="kick">Architecture</div>
+      <h2 class="sect-title">One closed loop. Continuously.</h2>
+      <div class="loopline" id="loopLine"></div>
+    </div>
+  </section>
+
+  <section class="wrap qa" id="questions">
+    <div class="kick">Product north star</div>
+    <h2 class="sect-title">Five questions, answered all the time</h2>
+    <div id="qaRows"></div>
+  </section>
+
+  <section class="wrap roles-sect" id="roles">
+    <div class="kick">Role-based access</div>
+    <h2 class="sect-title">One evidence base. Five different conversations.</h2>
+    <div class="rtabs" id="rTabs"></div>
+    <div class="rprev panel" id="rPrev"></div>
+  </section>
+
+  <section class="wrap scen" id="scenarios">
+    <div class="kick">Preconfigured demo scenarios</div>
+    <h2 class="sect-title">Five students, five different stories</h2>
+    <p class="sect-sub">Each profile is intentionally different — the system must respond to each one differently. Click a card to enter the demo as that student.</p>
+    <div class="scen-grid" id="scenGrid"></div>
+  </section>
+
+  <section class="wrap trust">
+    <div class="trust-grid">
+      <div>
+        <div class="kick">Guardrails</div>
+        <h2 class="sect-title">Evidence before AI. Always.</h2>
+        <p class="sect-sub">Deterministic computation first; the LLM never invents numbers. Every recommendation carries an evidence trail, passes a guardrail check, and high-impact decisions stay with human educators.</p>
+        <div class="trust-chips">
+          <span class="chip">No fabricated predictions</span><span class="chip">No permanent labels</span>
+          <span class="chip">No unsupported causal claims</span><span class="chip">Human-in-the-loop</span>
+          <span class="chip">Privacy-first access control</span>
+        </div>
+      </div>
+      <div class="why-demo panel" id="whyDemo"></div>
+    </div>
+  </section>
+
+  <footer class="lfoot wrap mono">
+    <span>PRAGNA · prototype build 0.4</span>
+    <span>All data is synthetic · no real student records</span>
+    <span>Designed for Sri Lankan GCE Advanced Level</span>
+  </footer>
+</section>
+
+<!-- ══════════════════ LOGIN ══════════════════ -->
+<section id="scr-login" class="screen hidden">
+  <div class="login-grid">
+    <div class="login-left">
+      <div class="brand"><span class="brand-mark">◈</span> PRAGNA <span class="brand-si">ප්‍රඥා</span></div>
+      <h2>Demo environment</h2>
+      <p>Choose a role to enter the platform. Every role sees only what that role is authorised to see — parents see a calm summary, teachers see their classes, advisors see the risk board, administrators see aggregated analytics.</p>
+      <div class="login-note mono">SYNTHETIC DEMO DATA · 108 STUDENTS · NO REAL PII</div>
+      <button class="btn ghost sm" data-act="goto" data-to="#/">← Back to landing</button>
+    </div>
+    <div class="login-right" id="roleCards"></div>
+  </div>
+</section>
+
+<!-- ══════════════════ APP SHELL ══════════════════ -->
+<div id="scr-app" class="app hidden">
+  <div class="sb-backdrop hidden" id="sbBackdrop" data-act="close-sidebar"></div>
+  <aside class="sb" id="appSidebar">
+    <div class="sb-brand">
+      <div class="brand"><span class="brand-mark">◈</span> PRAGNA</div>
+      <button class="icon-btn sb-close-btn" data-act="close-sidebar" aria-label="Close sidebar">✕</button>
+    </div>
+    <div class="sb-user" id="sbUser"></div>
+    <nav class="sb-nav" id="sbNav"></nav>
+    <div class="sb-foot mono">SYNTHETIC DEMO DATA<br>build 0.4 · demo model</div>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <button class="icon-btn sb-toggle" data-act="toggle-sidebar" aria-label="Toggle navigation">☰</button>
+      <div class="crumb" id="crumb"></div>
+      <div class="top-tools">
+        <div class="gsearch"><input id="gSearch" placeholder="Search students, programs…" autocomplete="off"><div class="search-drop hidden" id="searchDrop"></div></div>
+        <button class="btn pri sm hidden" id="btnAddAssess">+ Add assessment</button>
+        <div class="bell-wrap"><button class="icon-btn" id="bellBtn" aria-label="Notifications"></button><div class="notif-drop hidden" id="notifDrop"></div></div>
+        <button class="icon-btn" id="chatBtn" aria-label="AI assistant"></button>
+        <button class="btn ghost sm" data-act="logout">Sign out</button>
+      </div>
+    </header>
+    <main id="view"></main>
+  </div>
+</div>
+
+<!-- overlays -->
+<div id="drawerWrap" class="drawerWrap hidden"><div class="drawer" id="drawer"></div></div>
+<div id="modalWrap" class="modalWrap hidden"><div class="modal" id="modal"></div></div>
+<aside id="chat" class="chat hidden">
+  <div class="chat-head"><div><b>Pragna Assistant</b><span class="mono dim">evidence-grounded · tools only</span></div><button class="icon-btn" data-act="chat-toggle" aria-label="Close assistant">✕</button></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-sugg" id="chatSugg"></div>
+  <div class="chat-input"><input id="chatIn" placeholder="Ask about evidence, trends, recommendations…"><button class="btn pri sm" data-act="chat-send">Send</button></div>
+</aside>
+<div id="toasts"></div>
+<div id="tip" class="tip hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
